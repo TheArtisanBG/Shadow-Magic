@@ -57,3 +57,23 @@ function ArtisanNightsingerActionbarListener(config, state)
    end
 end
 EEex_Actionbar_AddListener(ArtisanNightsingerActionbarListener)
+
+function ArtisanFighterShadowAdeptDualActionbarListener(config, state)
+   if 
+      state == 7
+      and EEex_GameObject_GetSelected():getActiveStats().m_nKit == Shadow_Adept_IDS
+      then
+      EEex_Actionbar_SetButton(5, EEex_Actionbar_ButtonType.STEALTH)
+   end
+end
+EEex_Actionbar_AddListener(ArtisanFighterShadowAdeptDualActionbarListener)
+
+function ArtisanClericShadowAdeptDualActionbarListener(config, state)
+   if 
+      state == 14
+      and EEex_GameObject_GetSelected():getActiveStats().m_nKit == Shadow_Adept_IDS
+      then
+      EEex_Actionbar_SetButton(5, EEex_Actionbar_ButtonType.STEALTH)
+   end
+end
+EEex_Actionbar_AddListener(ArtisanClericShadowAdeptDualActionbarListener)
