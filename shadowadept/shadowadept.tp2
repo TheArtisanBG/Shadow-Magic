@@ -38,56 +38,56 @@ LANGUAGE ~English~
          ~English~
 		 ~%MOD_FOLDER%/languages/english/setup.tra~
 
-BEGIN ~Shadow Magic: Main Component~
+BEGIN ~Shadow Magic: Main Component~ DESIGNATED 0000
 
-BEGIN ~Drain Constitution on Cast~
+BEGIN ~Drain Constitution on Cast~ DESIGNATED 0001
 REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
 OUTER_SET hpcost = 1
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
 
-BEGIN ~Drain Maximum Hit Points on Cast~
+BEGIN ~Drain Maximum Hit Points on Cast~ DESIGNATED 0002
 REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
 OUTER_SET hpcost = 2
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
 
-BEGIN ~Drain Current Hit Points on Cast~
+BEGIN ~Drain Current Hit Points on Cast~ DESIGNATED 0003
 REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
 OUTER_SET hpcost = 3
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
 
-BEGIN ~No Resource Cost~
+BEGIN ~No Resource Cost~ DESIGNATED 0004
 REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 FORCED_SUBCOMPONENT ~Shadow Magic: Resource Costs~
 OUTER_SET hpcost = 4
 INCLUDE ~%MOD_FOLDER%/components/1_shadow_adept.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/crossmod.tpa~
 
-BEGIN ~Shadow Magic: Shadow Monk monk kit~
+BEGIN ~Shadow Magic: Shadow Monk monk kit~ DESIGNATED 0005
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 
 INCLUDE ~%MOD_FOLDER%/components/2_shadow_monk.tpa~
 
-BEGIN ~Hardcore Difficulty: Casts up to 9th level spells~
+BEGIN ~Hardcore Difficulty: Casts up to 9th level spells~ DESIGNATED 0006
 SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 OUTER_SET shade_lord_difficulty = 1
 INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
 
-BEGIN ~Standard Difficulty: Casts up to 7th level spells~
+BEGIN ~Standard Difficulty: Casts up to 7th level spells~ DESIGNATED 0007
 SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
 OUTER_SET shade_lord_difficulty = 2
 INCLUDE ~%MOD_FOLDER%/components/5_shade_lord.tpa~
 
-BEGIN ~Add Bonus Special Ability Only~
+BEGIN ~Add Bonus Special Ability Only~ DESIGNATED 0008
 SUBCOMPONENT ~Shadow Magic: Enhanced Shade Lord (BG2:EE)~
   REQUIRE_PREDICATE (GAME_IS ~bg2ee eet~) ~This component must be installed on BG2:EE.~
   REQUIRE_COMPONENT ~Setup-shadowadept.tp2~ ~0~ ~Main component must be installed~
