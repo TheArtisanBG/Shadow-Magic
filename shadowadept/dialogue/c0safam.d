@@ -41,6 +41,8 @@ END
 ++ ~You wouldn't happen to have any advice, would you?~ + YINROU-BG2-3-2
 + ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop hiding while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + YINROU-BG2-3-5
 + ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to hide in shadows while out of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + YINROU-BG2-3-6
++ ~Global("DisableFamiliarAttackAI","LOCALS",0)~ + ~I want you to attack any enemies you see.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",1)~ + YINROU-ATTACK-ON
++ ~Global("DisableFamiliarAttackAI","LOCALS",1)~ + ~I want you to avoid attacking enemies without my command.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",0)~ + YINROU-ATTACK-OFF
 ++ ~How are you? Is everything alright?~ + YINROU-BG2-3-3
 ++ ~Nothing right now. Let's get moving.~ + YINROU-BG2-3-0
 
@@ -169,11 +171,19 @@ CHAIN C0SAFAM YINROU-BG2-3-4
 EXIT
 
 CHAIN C0SAFAM YINROU-BG2-3-5
-~Very well, then. I will face our foes head on.~
+~"Very well, then. I will face our foes head on."~
 EXIT
 
 CHAIN C0SAFAM YINROU-BG2-3-6
-~As you wish. Our enemies will not see me until it is too late.~
+~"As you wish. Our enemies will not see me until it is too late."~
+EXIT
+
+CHAIN C0SAFAM YINROU-ATTACK-ON
+~The wolf snarls. "Just as I prefer it."~
+EXIT
+
+CHAIN C0SAFAM YINROU-ATTACK-OFF
+~The wolf growls. "I will show restraint if you demand it."~
 EXIT
 
 CHAIN IF WEIGHT #-1 ~Global("C0SAFamiliarSummoned","GLOBAL",2) Alignment(Myself,MASK_LCNEUTRAL) InPartySlot(LastTalkedToBy,0)~ THEN C0SAFAM KASHAI-BG2-3
@@ -185,6 +195,8 @@ END
 ++ ~How are you? Is everything alright?~ + KASHAI-BG2-3-3
 + ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop singing while in combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + KASHAI-BG2-3-5
 + ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to sing while of combat.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + KASHAI-BG2-3-5
++ ~Global("DisableFamiliarAttackAI","LOCALS",0)~ + ~I want you to attack any enemies you see.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",1)~ + KASHAI-BG2-3-5
++ ~Global("DisableFamiliarAttackAI","LOCALS",1)~ + ~I want you to avoid attacking enemies without my command.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",0)~ + KASHAI-BG2-3-5
 ++ ~Nothing right now. Let's get moving.~ + KASHAI-BG2-3-0
 
 CHAIN C0SAFAM KASHAI-BG2-3-0
@@ -317,6 +329,8 @@ END
 ++ ~How are you? Is everything alright?~ + NYX-BG2-3-3
 + ~Global("DisableFamiliarAI","LOCALS",0)~ + ~I want you to stop searching for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",1)~ + NYX-BG2-3-6
 + ~Global("DisableFamiliarAI","LOCALS",1)~ + ~I want you to search for traps.~ DO ~SetGlobal("DisableFamiliarAI","LOCALS",0)~ + NYX-BG2-3-6
++ ~Global("DisableFamiliarAttackAI","LOCALS",0)~ + ~I want you to attack any enemies you see.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",1)~ + NYX-ATTACK-ON
++ ~Global("DisableFamiliarAttackAI","LOCALS",1)~ + ~I want you to avoid attacking enemies without my command.~ DO ~SetGlobal("DisableFamiliarAttackAI","LOCALS",0)~ + NYX-ATTACK-OFF
 ++ ~Give me anything you have pickpocketed, will you?~ + NYX-BG2-3-4
 ++ ~Nothing right now. Let's get moving.~ + NYX-BG2-3-0
 
@@ -441,5 +455,13 @@ CHAIN C0SAFAM NYX-BG2-3-5
 EXIT
 
 CHAIN C0SAFAM NYX-BG2-3-6
-~Will do, boss.~
+~"Will do, boss."~
+EXIT
+
+CHAIN C0SAFAM NYX-ATTACK-ON
+~"By your order, boss. Stabby stabby."~
+EXIT
+
+CHAIN C0SAFAM NYX-ATTACK-OFF
+~"Okay, boss."~
 EXIT

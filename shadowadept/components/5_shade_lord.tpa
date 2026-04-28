@@ -1,32 +1,19 @@
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
+	LAF ADD_IDS_ENTRY INT_VAR minValue = 1 preferredValue = 200 STR_VAR idsFile = "stats.ids" identifier = "IS_SHADOW_ADEPT" RET value END
+
+OUTER_SET is_shadow_adept_stat = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~)
 
 OUTER_TEXT_SPRINT %is_shadow_adept_player1% ~CheckStatGT(Player1,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player2% ~CheckStatGT(Player2,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player3% ~CheckStatGT(Player3,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player4% ~CheckStatGT(Player4,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player5% ~CheckStatGT(Player5,0,IS_SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~CheckStatGT(Player6,6,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~CheckStatGT(Player6,0,IS_SHADOW_ADEPT)~
 
-OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~CheckStatGT(LastTalkedToBy,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~CheckStatGT(LastTalkedToBy(Myself),0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_myself% ~CheckStatGT(Myself,0,IS_SHADOW_ADEPT)~
-
-  END ELSE BEGIN
-
-    LAF ADD_IDS_ENTRY INT_VAR minValue = 200 maxValue = 255 preferredValue = 200 STR_VAR idsFile = "specific.ids" identifier = "SHADOW_ADEPT" RET value END
-
-OUTER_TEXT_SPRINT %is_shadow_adept_player1% ~Specifics(Player1,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player2% ~Specifics(Player2,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player3% ~Specifics(Player3,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player4% ~Specifics(Player4,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player5% ~Specifics(Player5,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~Specifics(Player6,SHADOW_ADEPT)~
-
-OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~Specifics(LastTalkedToBy,SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_myself% ~Specifics(Myself,SHADOW_ADEPT)~
-
-  END
-
+END
 
 OUTER_SET shad_lcase = RESOLVE_STR_REF(~shadow~)
 OUTER_SET shad_ucase = RESOLVE_STR_REF(~Shadow~)
@@ -36,7 +23,7 @@ COPY ~%MOD_FOLDER%/portraits/C0SHADEL.BMP~ ~OVERRIDE~
 
       ACTION_IF ("shade_lord_difficulty" = 1) THEN BEGIN
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY ~%MOD_FOLDER%/creatures/shadel.cre~ ~override~
 SAY NAME1 ~Shade Lord~
@@ -68,7 +55,7 @@ END
 END
       ACTION_IF ("shade_lord_difficulty" = 2) THEN BEGIN
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY ~%MOD_FOLDER%/creatures/shade2.cre~ ~override/shadel.cre~
 SAY NAME1 ~Shade Lord~

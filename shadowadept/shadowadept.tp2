@@ -1,6 +1,7 @@
 BACKUP ~weidu_external/backup/shadowadept~
 AUTHOR ~Artemius_I~
 ALWAYS
+  INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/ClassSpellTool.tpa~
   INCLUDE ~%MOD_FOLDER%/lib/eet.tph~
   INCLUDE ~%MOD_FOLDER%/lib/functions.tph~

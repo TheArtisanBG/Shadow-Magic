@@ -1121,8 +1121,8 @@ WRITE_ASCII 0x3a ~C0SA914A~
 LPF ALTER_EFFECT STR_VAR match_resource = C0SA101 resource = C0SA914 END
 LPF ALTER_ITEM_HEADER INT_VAR target = 5 STR_VAR icon = C0SA914A END
 SAY NAME1 ~Scroll~
-SAY NAME2 ~%SA_SPELL_912_NAME%~
-SAY DESC ~%SA_SPELL_912_DESC%~
+SAY NAME2 ~%SA_SPELL_914_NAME%~
+SAY DESC ~%SA_SPELL_914_DESC%~
 
  ACTION_FOR_EACH magescrolls IN SCRL75 SCRL6P SCRL8L SCRL7U SCRLA4 SCRL9D SCRL9Q SCRLB4 BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%magescrolls%.ITM~ BEGIN
@@ -1150,10 +1150,6 @@ COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN15.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN16.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN17.ITM~
 COPY_EXISTING ~RNDTRE01.ITM~ ~OVERRIDE/C0SARN18.ITM~
-
-ACTION_IF NOT FILE_EXISTS_IN_GAME ~RNDTRES.2DA~ THEN BEGIN
-  COPY ~%MOD_FOLDER%/2da/rndtres/rndtres.2da~ ~override~
-END
 
 APPEND ~RNDTRES.2DA~
 ~C0SARN01 C0SA101A C0SA103A C0SA106A C0SA107A *        *        *        *        *        *        *        *        *        *        *        *        *        *        *        *
@@ -1303,9 +1299,6 @@ COPY_EXISTING ~%bg1_eet_symbol%3901.are~ ~override~
         item_to_add = ~C0SABOX1~
       END
 
-ACTION_IF GAME_INCLUDES ~sod~
-THEN BEGIN
-
 COPY_EXISTING ~bd0115.are~ ~override~
       LPF ADD_AREA_ITEM
       INT_VAR
@@ -1362,8 +1355,6 @@ COPY_EXISTING ~bd7410.are~ ~override~
         item_to_add = ~C0SABOX2~
       END
 
-END
-
 ACTION_IF FILE_EXISTS_IN_GAME ~ANDRIS.cre~ THEN BEGIN
 COPY_EXISTING ~ANDRIS.cre~ ~override~
 ADD_CRE_ITEM ~C0SABOX1~ #0 #0 #0 ~NONE~ ~inv~
@@ -1409,7 +1400,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~ar1105.bcs~ THEN BEGIN
 EXTEND_BOTTOM ~ar1105.bcs~ ~%MOD_FOLDER%/scripts/bg2/ar1105.baf~
 END
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY ~%MOD_FOLDER%/creatures/c0cicer.cre~ ~override~
 WRITE_ASCII 0x250 ~c0sadept~  #8  // class
@@ -1505,7 +1496,6 @@ SAY NAME2 ~Shadowy Apparition~
 
 END
 
-COMPILE EVAL ~%MOD_FOLDER%/dialogue/bg2dial.d~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0jevan.baf~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0sasmi2.baf~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/bg2/c0sas1.baf~
@@ -1519,6 +1509,12 @@ SAY 0xc ~Cicero the Scribe~
 
 COPY ~%MOD_FOLDER%/items/bg2/c0sascr2.sto~ ~override~
 SAY 0xc ~Jevan Dyrr~
+
+COPY ~%MOD_FOLDER%/items/bg2/c0sascr3.sto~ ~override~
+SAY 0xc ~Shadow Scrolls~
+
+COPY ~%MOD_FOLDER%/items/bg2/c0sascr4.sto~ ~override~
+SAY 0xc ~Shadow Scrolls~
 
 COPY_EXISTING ~ar0082.are~ ~override~
       LPF ADD_AREA_ITEM

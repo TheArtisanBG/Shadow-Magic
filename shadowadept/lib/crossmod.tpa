@@ -9,7 +9,7 @@ THEN BEGIN
   PRINT ~Adding crossmod compatibility between Foundling and Shadow Magic~
   COMPILE EVAL ~%MOD_FOLDER%/dialogue/npc/foundling.d~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY_EXISTING ~L#Fou.cre~ ~override~
    LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END

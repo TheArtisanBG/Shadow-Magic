@@ -5,7 +5,7 @@
 COPY ~%MOD_FOLDER%/items/c0sainvu.itm~ ~override~
 COPY ~%MOD_FOLDER%/items/c0unisha.itm~ ~override~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY ~%MOD_FOLDER%/creatures/c0sakryn.cre~ ~override~
 WRITE_ASCII 0x248 ~c0sakryn~  #8  // override

@@ -7,15 +7,6 @@ LAF ADD_CLASS_SPELL STR_VAR excludeAllNormalWizardSpellsFromThisKit=~C0SAFM~ END
 LAF ADD_CLASS_SPELL STR_VAR excludeAllNormalWizardSpellsFromThisKit=~C0SAFMT~ END
 LAF ADD_CLASS_SPELL STR_VAR excludeAllNormalWizardSpellsFromThisKit=~C0SAFMC~ END
 
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI110~ scroll=~SCRL75~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI420~ scroll=~SCRL6P~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI617~ scroll=~SCRL7U~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI710~ scroll=~SCRL8L~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI722~ scroll=~SCRLA4~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI809~ scroll=~SCRL9D~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI908~ scroll=~SCRL9Q~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-LAF ADD_CLASS_SPELL STR_VAR resref=~SPWI919~ scroll=~SCRLB4~ class_include=~{'MAGE_ALL','FIGHTER_ALL','THIEF_ALL','SORCERER', 'BARD_ALL', 'CLERIC_ALL', }~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
-
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA101~ scroll=~C0SA101A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA101~ scroll=~C0SA101A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA102~ scroll=~C0SA102A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
@@ -132,3 +123,66 @@ LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA909~ scroll=~C0SA909A~ kit_include=~{'C0
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA910~ scroll=~C0SA910A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA911~ scroll=~C0SA911A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
 LAF ADD_CLASS_SPELL STR_VAR resref=~C0SA914~ scroll=~C0SA914A~ kit_include=~{'C0SADEPT', 'C0SASORC', 'C0SABARD', 'C0SAMT', 'C0SACM', 'C0SAFM', 'C0SAFMT', 'C0SAFMC', }~ END
+
+OUTER_SET Shadow_Adept_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SADEPT~)
+OUTER_SET Shadow_Disciple_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SASORC~)
+OUTER_SET Nightsinger_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SABARD~)
+OUTER_SET Nightblade_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAMT~)
+OUTER_SET Shade_Warrior_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAFM~)
+OUTER_SET Nightbringer_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SACM~)
+OUTER_SET Shadow_Enforcer_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAFMT~)
+OUTER_SET Dark_Justiciar_IDSNO = IDS_OF_SYMBOL (~kit~ ~C0SAFMC~)
+  
+ACTION_IF MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~ THEN BEGIN
+COPY ~%MOD_FOLDER%/lua/m_c0sasp__eeex.lua~      ~override/m_c0sasp.lua~
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~C0SADEPT, C0SASORC, C0SABARD, C0SAMT, C0SACM, C0SAFM, C0SAFMT, C0SAFMC~~~~~
+    string = EVAL ~~~~~%Shadow_Adept_IDSNO%, %Shadow_Disciple_IDSNO%, %Nightsinger_IDSNO%, %Nightblade_IDSNO%, %Nightbringer_IDSNO%, %Shade_Warrior_IDSNO%, %Shadow_Enforcer_IDSNO%, %Dark_Justiciar_IDSNO%~~~~~ //"
+  END
+END ELSE BEGIN
+COPY ~%MOD_FOLDER%/lua/m_c0sasp.lua~      ~override~
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = ~~~~~C0SADEPT, C0SASORC, C0SABARD, C0SAMT, C0SACM, C0SAFM, C0SAFMT, C0SAFMC~~~~~
+    string = EVAL ~~~~~%Shadow_Adept_IDSNO%, %Shadow_Disciple_IDSNO%, %Nightsinger_IDSNO%, %Nightblade_IDSNO%, %Nightbringer_IDSNO%, %Shade_Warrior_IDSNO%, %Shadow_Enforcer_IDSNO%, %Dark_Justiciar_IDSNO%~~~~~ //"
+  END
+  END
+
+OUTER_SPRINT itemDescRightButtonText ~
+    		text lua "itemDescRightButtonText()"
+		text style "button"
+		action
+		"
+			itemDescRightButtonAction()
+		"
+	}~
+
+COPY_EXISTING ~ui.menu~      ~override~
+  LPF REPLACE_MULTILINE
+    INT_VAR
+    strict = 1
+    verbose = 0
+    STR_VAR
+    pattern = EVAL ~~~~~%itemDescRightButtonText%~~~~~
+    string = EVAL ~~~~~%itemDescRightButtonText%
+        button
+    {
+        bam         GUIOSTUR
+        sequence    6
+        area        572 638 234 44
+        enabled "me_canLearnSpell_shadow_magic_exception()"
+        text lua "itemDescRightButtonText()"
+        text style "button"
+        action
+        "
+            itemDescRightButtonAction()
+        "
+    }~~~~~ //"
+  END

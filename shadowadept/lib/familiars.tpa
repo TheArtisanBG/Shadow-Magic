@@ -87,7 +87,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~baldur25.bcs~ THEN BEGIN
 EXTEND_TOP ~baldur25.bcs~ ~%MOD_FOLDER%/scripts/c0safamx.baf~
 END
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY ~%MOD_FOLDER%/familiars/c0safam1.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
@@ -107,6 +107,12 @@ SAY SELECT_COMMON2 ~~ [VWOLF02]
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW_WOLF~))
     LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~C0TRACK.2DA~ THEN BEGIN
+COPY_EXISTING ~C0SAFAM1.CRE~ ~OVERRIDE~
+    ADD_KNOWN_SPELL ~SPCL922~ #0 ~INNATE~
+    ADD_MEMORIZED_SPELL ~SPCL922~ #0 ~INNATE~ (1)
+  END
+
 COPY ~%MOD_FOLDER%/familiars/c0safam2.cre~ ~override~
 WRITE_ASCII 0x248 ~c0safam~  #8  // override
 WRITE_ASCII 0x2cc ~c0safam~  #8  // dialogue
@@ -114,6 +120,7 @@ WRITE_ASCII 0x280 ~c0safam~ #32 // death variable
 SAY NAME1 ~Ka'Shai~
 SAY NAME2 ~Ka'Shai~
 WRITE_ASCII 0X34 ~C0Kashai~ #8   //small portrait
+  WRITE_SHORT 0x246 (IDS_OF_SYMBOL (~kit~ ~C0SABARD~))
     WRITE_LONG 0x28 (IDS_OF_SYMBOL (~animate~ ~C0_SHADOW~))
     LPF ADD_CRE_EFFECT INT_VAR opcode = 401 target = 1 parameter1 = 1 parameter2 = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) END
 

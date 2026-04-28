@@ -6,7 +6,7 @@ COPY ~%MOD_FOLDER%/spells~ ~override~
 COPY ~%MOD_FOLDER%/spells/bams~ ~override~
 COPY ~%MOD_FOLDER%/spells/main~ ~override~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 	LAF ADD_IDS_ENTRY INT_VAR minValue = 1 preferredValue = 200 STR_VAR idsFile = "stats.ids" identifier = "IS_SHADOW_ADEPT" RET value END
 
 OUTER_SET is_shadow_adept_stat = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~)
@@ -16,9 +16,9 @@ OUTER_TEXT_SPRINT %is_shadow_adept_player2% ~CheckStatGT(Player2,0,IS_SHADOW_ADE
 OUTER_TEXT_SPRINT %is_shadow_adept_player3% ~CheckStatGT(Player3,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player4% ~CheckStatGT(Player4,0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_player5% ~CheckStatGT(Player5,0,IS_SHADOW_ADEPT)~
-OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~CheckStatGT(Player6,6,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_player6% ~CheckStatGT(Player6,0,IS_SHADOW_ADEPT)~
 
-OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~CheckStatGT(LastTalkedToBy,0,IS_SHADOW_ADEPT)~
+OUTER_TEXT_SPRINT %is_shadow_adept_lasttalkedtoby% ~CheckStatGT(LastTalkedToBy(Myself),0,IS_SHADOW_ADEPT)~
 OUTER_TEXT_SPRINT %is_shadow_adept_myself% ~CheckStatGT(Myself,0,IS_SHADOW_ADEPT)~
 
 APPEND ~splprot.2da~ ~C0_IS_SHADOW_ADEPT %is_shadow_adept_stat% 1 1~ UNLESS ~C0_IS_SHADOW_ADEPT 0x111 1 1~
@@ -146,7 +146,7 @@ COMPILE EVAL ~%MOD_FOLDER%/scripts/c0nighth.baf~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sa711.baf~
 COMPILE EVAL ~%MOD_FOLDER%/scripts/c0sadept.baf~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 COPY_EXISTING ~c0sadep.spl~ ~override~
     LPF ADD_SPELL_EFFECT INT_VAR opcode = 401 target = 1 timing = 9 special = IDS_OF_SYMBOL (~STATS~ ~IS_SHADOW_ADEPT~) parameter1 = 1 parameter2 = 1 END
 	END ELSE BEGIN

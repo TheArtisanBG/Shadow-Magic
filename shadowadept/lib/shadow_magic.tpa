@@ -312,7 +312,7 @@ COPY_EXISTING ~C0SADAY2.SPL~ ~OVERRIDE~
  ACTION_PHP_EACH use_scrolls AS num => scroll BEGIN
   ACTION_IF FILE_EXISTS_IN_GAME ~%scroll%.itm~ BEGIN
 	PRINT ~%scroll% is a wizard scroll~
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 	COPY_EXISTING ~%scroll%.itm~ ~override~
 	  LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 power = 2 parameter2 = %eeex_sa_splprot_param2% parameter1 = %eeex_sa_splprot_param1% timing = 2 special = RESOLVE_STR_REF (~Shadow Adept~) END
     END ELSE BEGIN
@@ -4048,7 +4048,7 @@ Saving Throw: Neg.
 
 The shadow adept summons a deadly nightwalker, one of the most powerful creatures from the Plane of Shadows, under <PRO_HISHER> command.~
 
-ACTION_IF (FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~) BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 
 COPY_EXISTING ~c0nightw.cre~ ~override~
 SAY NAME1 ~Nightwalker~

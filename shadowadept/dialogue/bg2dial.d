@@ -12,7 +12,8 @@ END
 ++ ~What is the meaning of that look?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 ++ ~Have we met?~ DO ~SetGlobal("C0CiceroShop","Global",1)~ + CICERO-1
 
-CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)~ THEN C0CICER CICERO-STORE
+CHAIN IF WEIGHT #-1 ~Global("C0CiceroShop","Global",1)
+%is_shadow_adept_lasttalkedtoby%~ THEN C0CICER CICERO-STORE
 ~We meet again. I still have many scrolls to offer, should you be in need. The gold will aid in my research.~
 END
 ++ ~Show me what you have.~ DO ~StartStore("c0sascr1",Lasttalkedtoby(Myself))~ EXIT
@@ -74,7 +75,13 @@ CHAIN C0JEVAN JEVAN-2
 ~* Calm, Veldrin. What you intend to do in this place in such a disguise is none of my affair. I am neither a native of this city, nor do my loyalties lie with those who would see you dead. 'Twas mere coincidence that we crossed paths. *~ [EFF_P05]
 = ~* So long as you do not interfere with my business, I will treat you the same in turn. In fact... we may even be able to be of benefit to each other. *~
 END
-IF ~%is_shadow_adept_player1%~ EXTERN C0JEVAN JEVAN-3
+IF ~OR(6)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ EXTERN C0JEVAN JEVAN-3
 IF ~!%is_shadow_adept_player1%
 OR(5)
 %is_shadow_adept_player2%
@@ -263,3 +270,25 @@ DO ~SetGlobal("C0SASmithItem","GLOBAL",0)~ EXIT
 CHAIN C0SASMIT SMITH-NO
 ~It seems you have nothing which is suitable for my forge. Return another time, and perhaps I may find something. Farewell.~
 EXIT
+
+EXTEND_BOTTOM OHBMHSM 0 1 #2
++ ~Global("C0SABlackPitsShadowScrolls","GLOBAL",0)
+OR(6)
+%is_shadow_adept_player1%
+%is_shadow_adept_player2%
+%is_shadow_adept_player3%
+%is_shadow_adept_player4%
+%is_shadow_adept_player5%
+%is_shadow_adept_player6%~ + ~Do you sell shadow scrolls?~ DO ~SetGlobal("C0SABlackPitsShadowScrolls","GLOBAL",1)~ + bp2
++ ~Global("C0SABlackPitsShadowScrolls","GLOBAL",1)~ + ~I'd like to look at your shadow scrolls.~ DO ~ClearAllActions()
+                                      StartStore("c0sascr4",LastTalkedToBy(Myself))~ EXIT
+END
+
+CHAIN OHBMHSM bp2
+~(The old man raises an eyebrow, then bends down to pull open a drawer. He pulls a handful of scrolls out to show you.)~
+END
+  ++ ~I'll have a look at those.~ DO ~ClearAllActions()
+                                      StartStore("c0sascr4",LastTalkedToBy(Myself))~ EXIT
+  ++ ~On second thought, I'd rather look at your normal scrolls.~ DO ~ClearAllActions()
+                                                                      StartStore("ohbmhsm",LastTalkedToBy(Myself))~ EXIT
+  ++ ~Actually, I don't think I need any scrolls right now.~ EXIT

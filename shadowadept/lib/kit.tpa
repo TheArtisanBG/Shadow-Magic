@@ -10,7 +10,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -46,7 +46,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -85,7 +85,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – The Nightsinger's Bard Song, "Dirge of Despair", inflicts a harrowing curse upon all enemies who listen. Victims suffer from the pain of overwhelming sorrow and slowly lose the will to live. Enemies with less than 50% maximum hit points lose twice as many hit points per round. Enemies with less than 25% hit points additionally incur a penalty to morale.
 	
 	1st level: Enemies incur a -2 penalty to Luck and Saving Throws and lose 1 Hit Point per round. -1 to Morale.
@@ -127,7 +127,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -162,7 +162,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -197,7 +197,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -232,7 +232,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -267,7 +267,7 @@ Advantages:
 – +5% Magic Resistance.
 – +25% Cold and Magic Damage Resistance.
 – +2 bonus to saving throws against spells of the Enchantment, Illusion and Necromancy schools.
-– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.
+– Darkvision: The shadow adept is gifted with the ability to see better in darkness than in light, gaining permanent Infravision and immunity to blindness.EEEX_HIDE_DESC
 – May use Shadow Magic.
 
 REPLACE_ME
@@ -305,15 +305,67 @@ OUTER_SPRINT dualclass ~
 Prime Requisites For Dual-Classing: Intelligence, Charisma~
 
 ACTION_IF ("eeex" = 1) THEN BEGIN
+
 OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
   REPLACE_TEXTUALLY ~REPLACE_ME2~ ~%dualclass%~
-END
-END
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
 
-ACTION_IF NOT ("eeex" = 1) THEN BEGIN
+OUTER_PATCH_SAVE %shadow_disciple_desc% ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %nightsinger_desc% ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %nightblade_desc% ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %nightbringer_desc% ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %shade_warrior_desc% ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %shadow_enforcer_desc% ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+OUTER_PATCH_SAVE %dark_justiciar_desc% ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~
+– May use the Hide In Shadows ability.~ END
+
+END ELSE BEGIN
+
 OUTER_PATCH_SAVE shadow_adept_desc ~%shadow_adept_desc%~ BEGIN
   REPLACE_TEXTUALLY ~REPLACE_ME2~ ~~
-END
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %shadow_disciple_desc% ~%shadow_disciple_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %nightsinger_desc% ~%nightsinger_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %nightblade_desc% ~%nightblade_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %nightbringer_desc% ~%nightbringer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %shade_warrior_desc% ~%shade_warrior_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %shadow_enforcer_desc% ~%shadow_enforcer_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
+OUTER_PATCH_SAVE %dark_justiciar_desc% ~%dark_justiciar_desc%~ BEGIN
+  REPLACE_TEXTUALLY ~EEEX_HIDE_DESC~ ~~ END
+
 END
 
 ACTION_IF ("hpcost" = 1) THEN BEGIN
