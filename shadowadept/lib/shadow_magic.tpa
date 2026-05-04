@@ -4215,7 +4215,7 @@ The nightsinger channels into the Shadow Weave and draws upon a magical spell us
 
 This ability may be chosen twice.~
 
-ACTION_IF FILE_EXISTS_IN_GAME ~EEex_Actionbar.lua~ THEN BEGIN
+ACTION_IF (MOD_IS_INSTALLED ~EEEX/EEEX.TP2~ ~0~) THEN BEGIN
 INCLUDE ~%MOD_FOLDER%/lib/replace_multiline.tpa~
 INCLUDE ~%MOD_FOLDER%/lib/skills_eeex.tpa~
 

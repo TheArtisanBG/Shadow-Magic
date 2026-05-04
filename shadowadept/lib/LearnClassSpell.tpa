@@ -155,11 +155,7 @@ COPY ~%MOD_FOLDER%/lua/m_c0sasp.lua~      ~override~
   END
   END
 
-OUTER_SPRINT itemDescRightButtonText ~
-		"
-			itemDescRightButtonAction()
-		"
-	}~
+OUTER_SPRINT me_canLearnSpell ~local canLearnSpell = false~
 
 COPY_EXISTING ~ui.menu~      ~override~
   LPF REPLACE_MULTILINE
@@ -167,19 +163,15 @@ COPY_EXISTING ~ui.menu~      ~override~
     strict = 1
     verbose = 0
     STR_VAR
-    pattern = EVAL ~~~~~%itemDescRightButtonText%~~~~~
-    string = EVAL ~~~~~%itemDescRightButtonText%
-        button
-    {
-        bam         GUIOSTUR
-        sequence    6
-        area        572 638 234 44
-        enabled "me_canLearnSpell_shadow_magic_exception()"
-        text lua "itemDescRightButtonText()"
-        text style "button"
-        action
-        "
-            itemDescRightButtonAction()
-        "
-    }~~~~~ //"
+    pattern = EVAL ~~~~~%me_canLearnSpell%~~~~~
+    string = EVAL ~~~~~%me_canLearnSpell%
+for k, v in ipairs(me_addSpellChoice_shadow_magic_exception) do
+       if v.scroll == itemDesc.item.res then
+            for k2, v2 in ipairs(v.kit_include) do
+                if v2 == me_realKit then
+                return itemDescRightButtonEnabled()
+                end
+             end
+             end
+             end~~~~~
   END
