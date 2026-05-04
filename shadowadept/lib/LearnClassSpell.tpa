@@ -156,9 +156,6 @@ COPY ~%MOD_FOLDER%/lua/m_c0sasp.lua~      ~override~
   END
 
 OUTER_SPRINT itemDescRightButtonText ~
-    		text lua "itemDescRightButtonText()"
-		text style "button"
-		action
 		"
 			itemDescRightButtonAction()
 		"
