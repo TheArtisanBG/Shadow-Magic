@@ -1,4 +1,7 @@
 // SCROLLS
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~RNDTRES.2DA~ THEN BEGIN
+  COPY ~%MOD_FOLDER%/2da/rndtres~ ~override~
+END
 
 COPY ~%MOD_FOLDER%/areas~ ~override~
 
